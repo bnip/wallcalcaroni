@@ -29,5 +29,4 @@ class CalculationManagerTests: XCTestCase {
         let calcManger2 = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
         XCTAssertEqual(calcManger1, calcManger2)
     }
-    
 }
