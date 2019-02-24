@@ -25,10 +25,9 @@ class CalculationManagerTests: XCTestCase {
     }
 
     func testInit_WhenGivenValues_TakesValues() {
-        let calcManger = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
-        XCTAssertEqual(calcManger.valueA, 10)
-        XCTAssertEqual(calcManger.valueB, 20)
-        XCTAssertNotNil(calcManger.currentOperand)
+        let calcManger1 = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
+        let calcManger2 = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
+        XCTAssertEqual(calcManger1, calcManger2)
     }
     
 }
