@@ -34,4 +34,34 @@ class CalculationManagerTests: XCTestCase {
         XCTAssertEqual(sut.valueA, 0)
         XCTAssertEqual(sut.valueB, 0)
     }
+    
+    func testValues_InsertingValues_ChangesValueA(){
+        sut.insert(value: 10)
+        XCTAssertEqual(sut.valueA, 10)
+    }
+    
+    func testOperand_IsInitiallyNil() {
+        XCTAssertNil(sut.currentOperand, "Operand Should be nil")
+    }
+    
+    func testOpperand_WhenGivenOperand_SetsOperand() {
+        sut.insert(value: 20)
+        sut.set(operand: .subtract)
+        XCTAssertNotNil(sut.currentOperand)
+    }
+    
+    func testCalculation_ForValues() {
+        sut.insert(value: 15)
+        sut.set(operand: .subtract)
+        sut.insert(value: 5)
+        XCTAssertEqual(sut.calculate(), 10)
+    }
+    
+    func testClear_WhenCalledClearsValues() {
+        sut.insert(value: 20)
+        _ = sut.clearValues()
+        XCTAssertEqual(sut.valueA, 0)
+        XCTAssertEqual(sut.valueB, 0)
+        XCTAssertEqual(sut.valueEntryArray, [])
+    }
 }
