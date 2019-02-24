@@ -29,4 +29,9 @@ class CalculationManagerTests: XCTestCase {
         let calcManger2 = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
         XCTAssertEqual(calcManger1, calcManger2)
     }
+    
+    func testValues_AreInitiallyZer() {
+        XCTAssertEqual(sut.valueA, 0)
+        XCTAssertEqual(sut.valueB, 0)
+    }
 }
