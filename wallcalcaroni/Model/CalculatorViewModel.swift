@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CalculationManager: Equatable{
+struct CalculatorViewModel: Equatable{
     var valueA: Int = 0
     var valueB: Int = 0
     var currentOperand: Operand?

@@ -12,11 +12,11 @@ import XCTest
 class CalculationManagerTests: XCTestCase {
 
     //sut = System Under Test
-    var sut:CalculationManager!
+    var sut:CalculatorViewModel!
     
     override func setUp() {
         super.setUp()
-        sut = CalculationManager()
+        sut = CalculatorViewModel()
     }
 
     override func tearDown() {
@@ -25,8 +25,8 @@ class CalculationManagerTests: XCTestCase {
     }
 
     func testInit_WhenGivenValues_TakesValues() {
-        let calcManger1 = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
-        let calcManger2 = CalculationManager(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
+        let calcManger1 = CalculatorViewModel(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
+        let calcManger2 = CalculatorViewModel(valueA: 10, valueB: 20, currentOperand: .multiply, valueEntryArray: [])
         XCTAssertEqual(calcManger1, calcManger2)
     }
     
